@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h6>User List :</h6>
+        <ul class="list-group">
+          <li
+          class="list-group-item"
+          *ngFor="let user of users">
+            <app-user [user]="user"></app-user>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>
+

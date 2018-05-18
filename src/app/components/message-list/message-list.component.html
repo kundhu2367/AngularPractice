@@ -1,0 +1,13 @@
+<input type="text" name="" id="" (keyup.enter)="addMessage()" [(ngModel)]="msg">
+<h1>List of Messages!</h1>
+<ul class='list-group'>
+  <li class='list-group-item'
+  *ngFor="let message of messageList; let i = index;">
+    <app-message [message]="message.message" [index]="i"
+      (messageDelete)="onMsgDelete($event)"></app-message>
+  </li>
+</ul>
+
+<button *ngIf="messageList.length > 0" (click)="changeFirstMsg()">changeFirstMsg</button>
+
+<!-- <ng-content></ng-content> -->
