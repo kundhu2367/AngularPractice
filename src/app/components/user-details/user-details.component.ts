@@ -11,6 +11,7 @@ import { UserService } from '../../services/user/user.service';
 export class UserDetailsComponent implements OnInit {
 
   users: Array<IUser>;
+  posts: any;
 
   user: any;
 
@@ -35,6 +36,38 @@ export class UserDetailsComponent implements OnInit {
     });
 
     this.activatedRoute.queryParams.subscribe((qs) => console.log(qs));
+  }
+
+  createUser() {
+    this.user.id = null;
+    this.userService.createUser(this.user).subscribe(
+      user => alert(`A New user was created : ${user.id}`),
+      err => alert(`got an error : ${err}`),
+      () => alert(`creation of user completed!`)
+    );
+  }
+
+  updateUser() {
+    this.user.name = 'Sam Kolder';
+    this.user.email = 'sam.kolder@example.com';
+    this.userService.updateUser(this.user).subscribe(
+      user => alert(`A user was updated : ${user.id}`),
+      err => alert(`got an error : ${err}`),
+      () => alert(`updateion of user completed!`)
+    );
+  }
+
+  deleteUser() {
+    this.userService.deleteUser(this.user.id).subscribe(
+      user => alert(`A user was deleted : ${user.id}`),
+      err => alert(`got an error : ${err}`),
+      () => alert(`deletion of user completed!`)
+    );
+  }
+
+
+  getUserPosts() {
+    this.posts = this.userService.getUserPosts(this.user.id);
   }
 
 }

@@ -4,6 +4,14 @@
   User Name: {{ user.name }} <br>
   User Email: {{ user.email }} <br>
   User Website: {{ user.website }} <br>
-  User Address: <br>
-  <pre>{{ user.address | json }}</pre>
+  <!-- User Address: <br>
+  <pre>{{ user.address | json }}</pre> -->
 
+  <hr>
+  <button class="btn btn-success" (click)="createUser()">Create User</button>
+  <button class="btn btn-primary" (click)="updateUser()">Update User</button>
+  <button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+  <button class="btn btn-warning" (click)="getUserPosts()">Get Posts by User</button>
+
+  <h4>User's Posts </h4>
+  <pre>{{ posts | async | json }} </pre>

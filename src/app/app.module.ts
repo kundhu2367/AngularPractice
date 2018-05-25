@@ -20,6 +20,9 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { UserComponent } from './components/user/user.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { UserService } from './services/user/user.service';
+import { OneComponent } from './components/one/one.component';
+import { TwoComponent } from './components/two/two.component';
+import { BuiltinStrDirComponent } from './components/builtin-str-dir/builtin-str-dir.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { UserService } from './services/user/user.service';
     UsersComponent,
     UserDetailsComponent,
     UserComponent,
-    PlaceholderComponent
+    PlaceholderComponent,
+    OneComponent,
+    TwoComponent,
+    BuiltinStrDirComponent
   ],
   imports: [
     BrowserModule,

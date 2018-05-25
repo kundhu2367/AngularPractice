@@ -12,12 +12,16 @@ import { ConfirmationGuard } from '../gaurds/confirmation/confirmation.guard';
 import { MessageListComponent } from '../components/message-list/message-list.component';
 import { UserService } from '../services/user/user.service';
 import { UsersResolveGuard } from '../gaurds/usersResolve/users-resolve.guard';
+import { ParentComponent } from '../components/parent/parent.component';
+import { BuiltinStrDirComponent } from '../components/builtin-str-dir/builtin-str-dir.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent, canActivate: [ AuthGuard ] },
   { path: 'about', component: AboutComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
+  { path: 'parent', component: ParentComponent },
+  { path: 'str-dir', component: BuiltinStrDirComponent },
   { path: 'users', component: UsersComponent, pathMatch: 'prefix',
     // canActivateChild: [ AuthGuard ],
     resolve: {
